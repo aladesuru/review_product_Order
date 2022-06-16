@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-const CTAbutton  = ({backgroundColor, text}) => {
+const CTAbutton  = ({backgroundColor, text, btnIndex}) => {
     return (
         <button style={{backgroundColor}}>{text}</button>
     )

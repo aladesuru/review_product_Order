@@ -51,7 +51,7 @@ button {
 }
 
 .review-order-details table
- {
+{
     width:100%;
     text-align: justify;
 }
@@ -83,6 +83,18 @@ button {
     font-size: 17px;
     border-radius: 2px;
 }
+
+.review-order-details .deleteBtn{
+    background-color: red;
+}
+.qty-counter .decreaseBtn{
+    background-color: rgba(236, 182, 4, .6);
+}
+
+.qty-counter .increaseBtn{
+    background-color: rgba(27, 131, 3, 0.6);
+}
+
 
 .review-order-details button {
     color: #fff;
@@ -121,7 +133,9 @@ button {
     color: #fff;
     margin-top: 15px;
     width: 150px;
+    background-color: #11b0dc;
 }
+
 /***********************
     media queries
 ************************/
