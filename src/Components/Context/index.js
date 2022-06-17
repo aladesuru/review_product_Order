@@ -27,27 +27,7 @@ const Provider = (props) => {
         } })
     };
 
-    // const handleChangeQty = (index, qty) => {
-    //     setProductOrder((prevState) => {
-    //         const ProductDetails = prevState.ProductDetails.map((order, listIndex) => {
-    //             if (index === listIndex) {
-    //                 return {
-    //                     ...order,
-    //                     quantity:   parseInt(qty)
-    //                 }
-    //             } else {
-    //                 return {
-    //                     ...order
-    //                 }
-    //             }
-    //         })
-    //         return {
-    //             ...prevState,
-    //             ProductDetails
-    //         } })
-    //     };
-
-        console.log('state => ', productOrder);
+    console.log('state => ', productOrder);
 
     return(
         <AppContext.Provider value={{productOrder, actions:{handleChangeQtyBYbtn}}}>
