@@ -3,11 +3,11 @@ import { AppContext } from '../Context';
 
 const QtyCounter = (props) => {
     const [qty, setQty] = useState(props.quantity);
-    // const [enable, setEnable] = useState(true);
     const {actions} = useContext(AppContext);
     let qtyValue ;
 
     const onQtyChange = (e) => {
+        console.log(e);
         if (e.target.value < 0 || e.target.value > 10){
             setQty(0);
             alert("Sorry quantity value can only be between 1 to 10");
@@ -23,13 +23,24 @@ const QtyCounter = (props) => {
 
     const onClickBtnQtychange = (e, delta) => {
         e.preventDefault();
-        setQty(parseInt(qty) + delta) ;
+
+        if(qtyValue.value < 0 || qtyValue.value > 10 || qtyValue.value === " "){
+            setQty(0);
+            alert("Sorry quantity value can only be between 1 to 10");
+        }else {
+            let value;
+            if(!isNaN(qtyValue.value)){
+                value = parseInt(qtyValue.value) + delta;
+                setQty(value);
+            }
+        }
+
         actions.handleChangeQtyBYbtn(props.orderIndex , delta);
     }
 
 
     return(
-        <form className='qty-counter' onSubmit={(e) => e.preventDefault()}>
+        <form className='qty-counter' onSubmit={(e) => {e.preventDefault() ;  actions.handleChangeQtyBYbtn(props.orderIndex , qty);}}>
             <input type="text"
             value={qty}
             ref ={(input) => qtyValue = input }

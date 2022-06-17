@@ -13,7 +13,7 @@ const Provider = (props) => {
             if (index === listIndex) {
                 return {
                     ...order,
-                    quantity:  delta === -1 || delta === 1 ? order.quantity + delta : delta
+                    quantity:  delta === -1 || delta === 1 ? parseInt(order.quantity) + delta : delta
                 }
             } else {
                 return {
@@ -27,30 +27,30 @@ const Provider = (props) => {
         } })
     };
 
-    const handleChangeQty = (index, qty) => {
-        setProductOrder((prevState) => {
-            const ProductDetails = prevState.ProductDetails.map((order, listIndex) => {
-                if (index === listIndex) {
-                    return {
-                        ...order,
-                        quantity:   parseInt(qty)
-                    }
-                } else {
-                    return {
-                        ...order
-                    }
-                }
-            })
-            return {
-                ...prevState,
-                ProductDetails
-            } })
-        };
+    // const handleChangeQty = (index, qty) => {
+    //     setProductOrder((prevState) => {
+    //         const ProductDetails = prevState.ProductDetails.map((order, listIndex) => {
+    //             if (index === listIndex) {
+    //                 return {
+    //                     ...order,
+    //                     quantity:   parseInt(qty)
+    //                 }
+    //             } else {
+    //                 return {
+    //                     ...order
+    //                 }
+    //             }
+    //         })
+    //         return {
+    //             ...prevState,
+    //             ProductDetails
+    //         } })
+    //     };
 
         console.log('state => ', productOrder);
 
     return(
-        <AppContext.Provider value={{productOrder, actions:{handleChangeQtyBYbtn, handleChangeQty}}}>
+        <AppContext.Provider value={{productOrder, actions:{handleChangeQtyBYbtn}}}>
             {props.children}
         </AppContext.Provider>
     )
