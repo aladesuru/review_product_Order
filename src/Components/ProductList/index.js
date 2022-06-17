@@ -19,6 +19,7 @@ const ProductList = (props) => {
             <tbody>
             {
                 ProductDetails.map((orderlist , index) => {
+                    let unitCost = (orderlist.quantity * orderlist.price).toFixed(2)
                     return (
                         <tr key={index}>
                             <td>{orderlist.product}</td>
@@ -29,7 +30,7 @@ const ProductList = (props) => {
                             orderIndex={index}
                             />
                             </td>
-                            <td>{orderlist.cost}</td>
+                            <td>{unitCost}</td>
                             <td><button className='deleteBtn'>Delete</button></td>
                         </tr>
                     )

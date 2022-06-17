@@ -1,6 +1,9 @@
-import React from 'react';
+import React , {useContext}from 'react';
+import { AppContext } from '../Context';
 
 const ProductCost = () => {
+    const{productOrder} = useContext(AppContext);
+    // const subTotal = productOrder.productDetails.reduce((accu, curr) => accu + curr.cost, 0);
     return(
         <div className='order-subtotal-total'>
         <div className='subtotal-cost'>

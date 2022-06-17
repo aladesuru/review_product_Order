@@ -7,12 +7,13 @@ const Provider = (props) => {
     const [productOrder , setProductOrder] = useState(basket);
 
     const handleChangeQtyBYbtn = (index, delta) => {
+        console.log('delta', delta);
     setProductOrder((prevState) => {
         const ProductDetails = prevState.ProductDetails.map((order, listIndex) => {
             if (index === listIndex) {
                 return {
                     ...order,
-                    quantity:  order.quantity + delta
+                    quantity:  delta === -1 || delta === 1 ? order.quantity + delta : delta
                 }
             } else {
                 return {

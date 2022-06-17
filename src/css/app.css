@@ -135,7 +135,9 @@ button {
     width: 150px;
     background-color: #11b0dc;
 }
-
+.hide {
+    display: none;
+}
 /***********************
     media queries
 ************************/
