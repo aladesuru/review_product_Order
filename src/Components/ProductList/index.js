@@ -2,9 +2,14 @@ import React, {useContext} from 'react';
 import { AppContext } from '../Context';
 import QtyCounter from '../QtyCounter';
 
-const ProductList = (props) => {
-    const {productOrder} = useContext(AppContext);
-    const {ProductDetails} = productOrder;
+const ProductList = () => {
+    const {productOrder, actions} = useContext(AppContext);
+    const {productDetails} = productOrder;
+
+    const removeProduct = (ndx) => {
+        actions.handleRemoveProduct(ndx);
+        actions.handleUpdate_Subtotal_totalCost();
+    }
 
     return(
         <table>
@@ -18,7 +23,7 @@ const ProductList = (props) => {
                 </thead>
             <tbody>
             {
-                ProductDetails.map((orderlist , index) => {
+                productDetails.map((orderlist , index) => {
                     let unitCost = (orderlist.quantity * orderlist.price).toFixed(2)
                     return (
                         <tr key={index}>
@@ -31,7 +36,7 @@ const ProductList = (props) => {
                             />
                             </td>
                             <td>{unitCost}</td>
-                            <td><button className='deleteBtn'>Delete</button></td>
+                            <td><button onClick={() => removeProduct(index)} className='deleteBtn'>Delete</button></td>
                         </tr>
                     )
                 })

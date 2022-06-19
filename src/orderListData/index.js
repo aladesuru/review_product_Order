@@ -1,8 +1,8 @@
 export const basket = {
     subtotal: 3.05,
-    vat: 0.61,
-    total: 3.66,
-    ProductDetails: [
+    vatValue: 0.61,
+    subtotalPlusVat: 3.66,
+    productDetails: [
     {
         product:'Apple',
         price: 0.52,
@@ -12,7 +12,7 @@ export const basket = {
     },
     {
         product:'Banana',
-        price: 0.62,
+        price: 0.67,
         quantity: 3,
         cost: 2.01,
         productId: 2
