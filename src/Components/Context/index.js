@@ -4,7 +4,7 @@ import { basket } from '../../orderListData';
 export const AppContext = React.createContext();
 
 const Provider = (props) => {
-    const [productOrder , setProductOrder] = useState(basket);
+const [productOrder , setProductOrder] = useState(basket);
 
     const handleQtyChange = (index, delta) => {
     setProductOrder((prevState) => {
@@ -12,7 +12,7 @@ const Provider = (props) => {
             if (index === listIndex) {
                 return {
                     ...order,
-                    quantity:  delta === -1 || delta === 1 ? parseInt(order.quantity) + delta : delta,
+                    quantity:  delta === -1 || delta === 1 ? parseInt(order.quantity) + delta : delta === '' ? parseInt(0) : parseInt(delta),
                 }
             } else {
                 return {
@@ -79,8 +79,6 @@ const Provider = (props) => {
             }
         })
     };
-
-    console.log('state => ', productOrder);
 
     return(
         <AppContext.Provider value={{productOrder,

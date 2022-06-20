@@ -8,18 +8,16 @@ const QtyCounter = (props) => {
     let qtyValue ;
 
     const onQtyChange = (e, delta) => {
-        console.log(e);
         e.preventDefault();
-        if(qtyValue.value < 0 || qtyValue.value > 10 || qtyValue.value === " "){
+        if(qtyValue.value < 0 || qtyValue.value > 10 || isNaN(qtyValue.value) === true){
             setQty(0);
-            alert("Sorry quantity value can only be between 1 to 10");
+            actions.handleQtyChange(props.orderIndex , qty);
+            actions.handleQtyChange(props.orderIndex , qty);
         }else {
             if (delta === -1 || delta === +1) {
-                if(!isNaN(qtyValue.value)){
-                    let value = parseInt(qtyValue.value) + delta;
+                let value = parseInt(qtyValue.value) + delta;
                     setQty(value);
                     actions.handleQtyChange(props.orderIndex , delta);
-                }
             } else {
                 setQty(qtyValue.value);
                 actions.handleQtyChange(props.orderIndex , qty);

@@ -19,6 +19,9 @@ button {
     cursor: pointer;
     font-weight: bold;
 }
+table, tr {
+    width: 100%;
+}
 
 /***********************
     Base layout styles
@@ -61,8 +64,11 @@ button {
 
 .review-order-details td {
     padding: 10px 0px;
-}
+};
 
+.qty-counter {
+    margin-bottom: 20px;
+}
 .qty-counter input[type='text'],
 .qty-counter button,
 .review-order-details button{

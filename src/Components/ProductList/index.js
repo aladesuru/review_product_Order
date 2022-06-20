@@ -12,7 +12,7 @@ const ProductList = () => {
     }
 
     return(
-        <table>
+        <table data-testid ='productlist'>
                 <thead>
                     <tr>
                         <th>Product</th>
