@@ -141,9 +141,6 @@ table, tr {
     width: 150px;
     background-color: #11b0dc;
 }
-.hide {
-    display: none;
-}
 /***********************
     media queries
 ************************/
@@ -178,7 +175,6 @@ table, tr {
 
 }
 
-
 /***********************
     helper classes
 ************************/
@@ -188,13 +184,6 @@ table, tr {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.display-flex-direction{
-    flex-direction: column;
-}
-.hide-bullet-list {
-    list-style: none;
-}
-
 
 
 
