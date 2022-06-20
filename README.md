@@ -71,6 +71,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-### `Code completion using the following`
-1. React with Hooks, CSS.
+### `Code completion using the following:`
+1. React with Hooks, HTML, CSS.
 2. Unit test was done using Jest and react-test-library.
+
+### Approach
+1. App is scalable
+2. App is responsive
