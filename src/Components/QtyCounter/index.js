@@ -1,6 +1,7 @@
 import React, { useContext, useState} from 'react';
 import PropTypes from 'prop-types';
 import { AppContext } from '../Context';
+import { validateInputToBewholeNumber } from '../Utils/inputValidation';
 
 const QtyCounter = (props) => {
     const [qty, setQty] = useState(props.quantity);
@@ -9,7 +10,7 @@ const QtyCounter = (props) => {
 
     const onQtyChange = (e, delta) => {
         e.preventDefault();
-        if(qtyValue.value < 0 || qtyValue.value > 10 || isNaN(qtyValue.value) === true){
+        if(!validateInputToBewholeNumber(qtyValue.value)){
             setQty(0);
             actions.handleQtyChange(props.orderIndex , qty);
         }else {
