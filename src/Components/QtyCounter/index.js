@@ -12,7 +12,6 @@ const QtyCounter = (props) => {
         if(qtyValue.value < 0 || qtyValue.value > 10 || isNaN(qtyValue.value) === true){
             setQty(0);
             actions.handleQtyChange(props.orderIndex , qty);
-            actions.handleQtyChange(props.orderIndex , qty);
         }else {
             if (delta === -1 || delta === +1) {
                 let value = parseInt(qtyValue.value) + delta;
